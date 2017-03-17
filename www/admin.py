@@ -1,4 +1,5 @@
 from django.contrib import admin
-from .models import Person
+from .models import Runner, Category
 # Register your models here.
-admin.site.register(Person)
+admin.site.register(Runner)
+admin.site.register(Category)

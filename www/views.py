@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Person
+from .models import Runner, Category
 # Create your views here.
 def index(resquest):
-    people = Person.objects.all()
-    return render(resquest, 'index.html', {'people':people})
+    runners = Runner.objects.all()
+    categorys = Category.objects.all()
+    return render(resquest, 'index.html', {'runners':runners, 'categorys':categorys})
