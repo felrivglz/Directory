@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main>
+      <ul>
+
+      {% for meta in metasuser %}
+      <li> {{ meta.meta}}</li>
+      {% endfor %}
+      </ul>
+      <form class="" action="." method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" name="" value="Actualizar">
+      </form>
+    </main>
+    {% endblock %}

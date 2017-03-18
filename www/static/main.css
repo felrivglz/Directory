@@ -1,5 +1,5 @@
 body {
-  background-color: #ddd;
+  background-color: #e9ebee;
   font-size: 16px;
   padding:0;
   margin: 0;
@@ -7,10 +7,10 @@ body {
 main{
   margin: 0 auto;
   width: 90%;
-
+  border: 1px solid #fff;
 }
-section{
-  padding:0;
+.cont-user{
+  padding:10px 0 10px 0;
   margin: 0;
   min-width: 300px;
   border-radius: 5px;
@@ -18,13 +18,20 @@ section{
   text-align: center;
   display: inline-block;
   margin: 0 10px 10px 0;
+  border: 1px solid #dddfe2;
+  border-bottom: 2px solid #dddfe2;
+  box-shadow: 1px 1px 10px #888888;
 }
 img{
   border-radius: 50%;
+  box-shadow: 0px 5px 5px #888;
   padding:0;
   margin: 0;
   width: 150px;
   height: 150px;
+}
+img:hover {
+  box-shadow: 0px 5px 5px #080;
 }
 h2 {1.7em;
   font-weight: blod;
@@ -42,4 +49,51 @@ h2 {1.7em;
   font-size: 1em;
   padding:0;
   margin: 0;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.cont-main{
+  width: 80%;
+
+  margin: 0;
+  border-radius: 5px;
+  background: white;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  border: 1px solid #dddfe2;
+  border-bottom: 2px solid #dddfe2;
+  box-shadow: 1px 1px 10px #888888;
+}
+#cont-left{
+  padding:10px 0 10px 0;
+  margin: 0;
+  min-width: 20%;
+  min-height: 800px;
+  background: white;
+  text-align: center;
+  float:left;
+  margin: 0;
+  border-right: 2px solid #eee;
+  box-shadow: 0;
+}
+#cont-rigth{
+  float:left;
+  min-height: 800px;
+  min-width: 68%;
+
 }
