@@ -23,7 +23,8 @@ def detail(request, slug):
                         [
                             timede.distance,
                             timede.time,
-                            timede.compentition.name
+                            timede.compentition.name,
+                            timede.compentition.date
                         ])
 
     return render(request, 'details.html',{'runner':runner, 'distance':distance,

@@ -8,37 +8,41 @@
 
         <section id="cont-left">
           <img src="{{ runner.image }}" alt="">
-          <h2>{{ runner.first_name}}  {{runner.last_name}}</h2>
+
           <p class="person-title">{{ runner.birtday }}</p>
           <p class="person-email">{{ runner.category }}</p>
           <p class="person-email">{{ distance }}</p>
         </section>
 
         <section id="cont-rigth">
-          <p>
-            metas:
-          </p>
-          <ul>
-
-          {% for meta in metasuser %}
-          <li> {{ meta.meta}}</li>
-          {% endfor %}
-          </ul>
-          <table>
-            <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
-            </tr>
-            {%for time in alltime %}
-            <tr>
-              <td>{{ time.0 }}</td>
-              <td> {{time.1}}</td>
-              <td>{{time.2}}</td>
-            </tr>
-            {% endfor %}
-          </table>
-
+          <h1 id="titulo-details">{{ runner.first_name}}  {{runner.last_name}}</h1>
+          <section class="cont-in-r">
+            <h2 class="tituloh2-details">METAS:</h2>
+            <ul>
+              {% for meta in metasuser %}
+              <li> {{ meta.meta}}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          <section class="cont-in-r">
+            <h2 class="tituloh2-details">MARCAS:</h2>
+            <table>
+              <tr>
+                <th>Prueba</th>
+                <th>Tiempo</th>
+                <th>Nombre competencia</th>
+                  <th>Fecha</th>
+              </tr>
+              {%for time in alltime %}
+              <tr>
+                <td>{{ time.0 }}</td>
+                <td> {{time.1}}</td>
+                <td>{{time.2}}</td>
+                <td>{{time.3}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          </section>
 
         </section>
       </section>
