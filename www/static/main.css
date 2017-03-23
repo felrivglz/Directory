@@ -191,9 +191,7 @@ li{
 	color:#e25d29;
 	cursor: default;
 }
-#fdw nav ul li.current a span {
-	
-}
+
 #fdw nav ul li.current ul li a {
 	cursor:pointer;
 }
@@ -222,7 +220,7 @@ li{
     height:8px;
     display:block;
     border:none;
-    background:url('images/arrow_top.png') no-repeat left top;
+  
 
 }
 
