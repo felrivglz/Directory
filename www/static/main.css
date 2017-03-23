@@ -7,7 +7,12 @@ body {
 main{
   margin: 0 auto;
   width: 800px;
-  border: 1px solid #fff;
+
+}
+nav{
+  background: white;
+  border-bottom: 2px solid #dddfe2;
+  box-shadow: 1px 1px 10px #888888;
 }
 .cont-user{
   padding:10px 0 10px 0;
@@ -22,7 +27,22 @@ main{
   border-bottom: 2px solid #dddfe2;
   box-shadow: 1px 1px 10px #888888;
 }
-img{
+
+.cont-login{
+  padding:10px 0 10px 0;
+
+  width: 350px;
+  border-radius: 5px;
+  background: white;
+  text-align: center;
+
+  margin: 30% auto;
+  border: 1px solid #dddfe2;
+  border-bottom: 2px solid #dddfe2;
+  box-shadow: 1px 1px 10px #888888;
+}
+
+.imagen-atletas{
   border-radius: 50%;
   box-shadow: 0px 5px 5px #888;
   padding:0;
@@ -30,7 +50,7 @@ img{
   width: 150px;
   height: 150px;
 }
-img:hover {
+.imagen-atletas:hover {
   box-shadow: 0px 5px 5px #080;
 }
 h2 {1.7em;
@@ -66,7 +86,6 @@ tr:hover{background-color:#f5f5f5}
 
 .cont-main{
   width: 800px;
-
   margin: 0;
   border-radius: 5px;
   background: white;
@@ -122,4 +141,138 @@ li{
 .best-time{
   font-size: 12px;
   margin: 0 0 3px 0;
+}
+#logo{
+  width:78px;
+  height:58px;
+}
+
+/*===== nav style ======*/
+#fdw nav select {
+	display:none; /* this is just for the mobile display */
+}
+#fdw nav ul {
+  float:right;
+	display:block;
+	z-index:999999;
+}
+#fdw nav ul li {
+	display:inline-block;
+	margin-left:10px;
+	position:relative;
+}
+#fdw nav ul li a:link, #fdw nav ul li a:visited {
+  text-decoration: none;
+  color:#444;
+	font:normal 16px 'Yanone Kaffeesatz', sans-serif;
+	text-transform:uppercase;
+	display:inline-block;
+	position:relative;
+}
+#fdw nav ul li a:hover, #fdw nav ul li a:active {
+	color:#e25d29;
+	text-decoration:none;
+}
+#fdw nav ul li span {
+	position:absolute;
+	right:-12px;
+	bottom:6px;
+	width:7px;
+	height:8px;
+	margin:0 0 0 3px;
+	float:right;
+	display:block;
+	font:0/0 a;
+}
+#fdw nav ul li.current {
+	border-bottom:2px solid #e25d29;
+}
+#fdw nav ul li.current a {
+	color:#e25d29;
+	cursor: default;
+}
+#fdw nav ul li.current a span {
+	background:url('../images/nav_arrow.png') no-repeat left 0;
+}
+#fdw nav ul li.current ul li a {
+	cursor:pointer;
+}
+
+/*===== sub_menu Style =======*/
+#fdw nav ul li ul.sub_menu {
+	position:absolute;
+	top:20px;
+	left:0;
+	margin:0;
+	padding:0;
+	background:#fff;
+	border:1px solid #ececec;
+	border-top:5px solid #e25d29;
+	display:none;
+	z-index:999999;
+    -moz-box-shadow: 0px 6px 7px #121012;
+    -webkit-box-shadow: 0px 6px 7px #121012;
+    box-shadow: 0px 6px 7px #121012;
+}
+#fdw nav ul li ul.sub_menu li.arrow_top {
+    position:absolute;
+    top:-12px;
+    left:12px;
+    width:13px;
+    height:8px;
+    display:block;
+    border:none;
+    background:url('images/arrow_top.png') no-repeat left top;
+
+}
+
+
+#fdw nav ul li ul.sub_menu li {
+	float:none;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #ececec;
+}
+#fdw nav ul li ul.sub_menu li a {
+	white-space: nowrap;
+	width: 150px;
+	padding:12px;
+	font:13px Arial, tahoma, sans-serif;
+	text-transform:capitalize;
+	color:#777;
+}
+#fdw nav ul li ul.sub_menu li a:hover {
+	background:#f9f9f9;
+	color:#333;
+}
+#fdw nav ul li ul.sub_menu li a.subCurrent {
+	color:#e25d29;
+	cursor:default;
+}
+#
+The media queries css will have the following code:
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+		/* nav */
+		#fdw nav ul li{
+			margin-left:12px;
+		}
+}
+
+	/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+
+		/* nav menu ul & select */
+		#fdw nav ul {
+			display:none;
+		}
+		#fdw nav select {
+			width:100%;
+			display:block;
+			margin-bottom:0;
+			cursor:pointer;
+			padding:6px;
+			background:#f9f9f9;
+			border:1px solid #e3e3e3;
+			color:#777;
+		}
 }

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 # Create your models here
 class Category(models.Model):
@@ -38,6 +39,7 @@ class Runner(models.Model):
     last_name = models.CharField(max_length=20)
     birtday = models.DateField(auto_now=False, auto_now_add=False)
     category = models.ForeignKey(Category)
+    coach = models.ForeignKey(User)
     distance = models.CharField(max_length=10, choices=DISTANCE)
     image = models.CharField(max_length=200)
     slug = models.SlugField(max_length=40, blank=True)
@@ -75,9 +77,10 @@ class Time(models.Model):
                     ('400v', '400 Metros Con Vallas'),
                )
     distance = models.CharField(max_length=10, choices=DISTANCE)
+    time = models.CharField(max_length=10)
     compentition = models.ForeignKey(Competition)
     runner = models.ForeignKey(Runner)
-    time = models.CharField(max_length=10)
+
 
     def __str__(self):
         return self.time

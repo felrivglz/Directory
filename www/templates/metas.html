@@ -1,6 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'baseentrenadores.html' %}
 {% block content %}
     <main>
+      <p>
+        <a href="{% url 'athletes'  user.username %}">Athletes<a/> >>
+        <a href="{% url 'detail'  user.username slug %}">{{ slug }}<a/> >>
+          nueva metas
+      </p>
+        <section class="cont-main">
+
       <ul>
 
       {% for meta in metasuser %}
@@ -12,5 +19,6 @@
         {{form.as_p}}
         <input type="submit" name="" value="Actualizar">
       </form>
+    </section>
     </main>
-    {% endblock %}
+  {% endblock %}

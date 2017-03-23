@@ -1,10 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'baseentrenadores.html' %}
 {% block content %}
     <main>
-      <h1>Atletas</h1>
+      <p>
+      <a href="{% url 'athletes'  user.username  %}">Athletes<a/>
+      </p>
       {% for runner in runners %}
       <section class="cont-user">
-        <img class="imagen-atletas" src="{{ runner.image }}" alt="">
+        <a href="{% url 'detail' user.username runner.slug %}">
+          <img class="imagen-atletas" src="{{ runner.image }}" alt="">
+        </a>
         <h2>{{ runner.first_name}}  {{runner.last_name}}</h2>
         <p class="person-title">{{ runner.birtday }}</p>
         <p class="person-email">{{ runner.category }}</p>

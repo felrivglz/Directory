@@ -1,10 +1,39 @@
-{% extends 'base.html' %}
+{% extends 'baseentrenadores.html' %}
 {% block content %}
     <main>
-      <form class="" action="." method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" name="" value="Actualizar">
-      </form>
+      <p>
+        <a href="{% url 'athletes'  user.username %}">Athletes<a/> >>
+        Nuevo Corredor
+      </p>
+      <section class="cont-main">
+        <section class="cont-in-r">
+          <h2 class="tituloh2-details">CORREDORES:</h2>
+          <table>
+            <tr>
+              <th>Nombre</th>
+              <th>birtday</th>
+              <th>category</th>
+              <th>distance</th>
+
+            </tr>
+            {% for runner in runners %}
+            <tr>
+              <td>{{ runner.first_name}} {{ runner.last_name}} </td>
+              <td> {{ runner.birtday}}</td>
+              <td>{{ runner.category}}</td>
+              <td>{{ runner.distance}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </section>
+        <section class="cont-in-r">
+          <h2 class="tituloh2-details">NUEVO CORREDOR:</h2>
+          <form class="" action="." method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" name="" value="Guardar">
+          </form>
+        </section>
+     </section>
     </main>
     {% endblock %}

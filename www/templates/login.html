@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main>
+      <section class="cont-login">
+        {% if nel == "nel1" %}
+        <span>Error Intente de nuevo</span>
+        {% elif nel == "nel2" %}
+        <span>pasword incorrecto, inetente de nuevo</span>
+        {% endif %}
+
+      <form class="" action="." method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" name="" value="Entrar">
+      </form>
+    </section>
+    </main>
+    {% endblock %}

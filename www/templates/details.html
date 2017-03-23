@@ -1,14 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'baseentrenadores.html' %}
 {% block content %}
     <main>
-
+      <p>
+      <a href="{% url 'athletes'  user.username %}">Athletes<a/> >>
+      <a href="{% url 'detail'  user.username runner.slug %}">{{ runner.slug }}<a/>
+      </p>
 
       <section class="cont-main">
 
 
         <section id="cont-left">
           <section class="cont-in-r">
-            <img src="{{ runner.image }}" alt="">
+            <img class="imagen-atletas" src="{{ runner.image }}" alt="">
 
             <p class="person-title">{{ runner.birtday }}</p>
             <p class="person-email">{{ runner.category }}</p>
@@ -36,6 +39,7 @@
               <li> {{ meta.meta}}</li>
               {% endfor %}
             </ul>
+            <p><a href="{% url 'metas'  user.username runner.slug %}">Editar</a></p>
           </section>
           <section class="cont-in-r">
             <h2 class="tituloh2-details">MARCAS:</h2>
@@ -55,6 +59,28 @@
               </tr>
               {% endfor %}
             </table>
+            <p><a href="{% url 'marcas'  user.username runner.slug %}">Editar</a></p>
+          </section>
+
+          <section class="cont-in-r">
+            <h2 class="tituloh2-details">Bitacora:</h2>
+            <table>
+              <tr>
+                <th>Prueba</th>
+                <th>Tiempo</th>
+                <th>Nombre competencia</th>
+                  <th>Fecha</th>
+              </tr>
+              {%for time in alltime %}
+              <tr>
+                <td>{{ time.0 }}</td>
+                <td> {{time.1}}</td>
+                <td>{{time.2}}</td>
+                <td>{{time.3}}</td>
+              </tr>
+              {% endfor %}
+            </table>
+            <p><a href="{% url 'marcas'  user.username runner.slug %}">Editar</a></p>
           </section>
 
         </section>

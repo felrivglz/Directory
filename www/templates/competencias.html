@@ -1,0 +1,33 @@
+{% extends 'baseentrenadores.html' %}
+{% block content %}
+    <main>
+      <p>
+        <a href="{% url 'athletes'  user.username %}">Athletes<a/> >>
+        Nueva Competencia
+      </p>
+      <section class="cont-main">
+        <table>
+          <tr>
+            <th>Nombre</th>
+            <th>lugar</th>
+            <th>clima</th>
+            <th>fecha</th>
+
+          </tr>
+          {% for compe in compes %}
+          <tr>
+            <td>{{ compe.name}}</td>
+            <td> {{ compe.place}}</td>
+            <td>{{ compe.weather}}</td>
+            <td>{{ compe.date }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <form class="" action="." method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" name="" value="Guardar">
+        </form>
+      </section>
+    </main>
+    {% endblock %}
